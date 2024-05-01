@@ -7,4 +7,4 @@ This application allows users to manage their personal finances by tracking expe
 ![UI Sketch Screenshot](personal_finance_manager\resources\images\UI_Sketch.png)
 
 ## Design Model (UML):
-
+![Class Diagram Screenshot](personal_finance_manager\resources\images\UML_Diagram.png)

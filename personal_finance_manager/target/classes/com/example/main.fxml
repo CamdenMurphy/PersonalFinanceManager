@@ -4,9 +4,8 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.MainController">
-    <TabPane fx:id="mainTabPane">
+<AnchorPane maxWidth="1.7976931348623157E308" prefHeight="363.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
+    <TabPane fx:id="mainTabPane" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="479.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
             <Tab text="Dashboard">
                 <content>

@@ -1,0 +1,3 @@
+<AnchorPane fx:controller="com.example.TransactionsController">
+    <!-- Layout for transactions -->
+</AnchorPane>

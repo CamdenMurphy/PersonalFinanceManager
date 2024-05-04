@@ -1,0 +1,3 @@
+<AnchorPane fx:controller="com.example.AccountsController">
+    <!-- Layout for accounts management -->
+</AnchorPane>

@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- It's important to include these namespace declarations -->
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.DashboardController">
-    <!-- Layout for dashboard specifics -->
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboard" prefHeight="270.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.DashboardController">
+   <children>
+      <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="35.0" layoutY="37.0" prefHeight="306.0" prefWidth="433.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Overview" textAlignment="CENTER" underline="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ListView prefHeight="249.0" prefWidth="304.0" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

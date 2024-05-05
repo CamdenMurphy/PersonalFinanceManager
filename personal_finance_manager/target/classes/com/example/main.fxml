@@ -3,28 +3,29 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
 
-<AnchorPane maxWidth="1.7976931348623157E308" prefHeight="363.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
-    <TabPane fx:id="mainTabPane" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="479.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane maxWidth="1.7976931348623157E308" prefHeight="300" prefWidth="400" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
+    <TabPane fx:id="mainTabPane" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
             <Tab text="Dashboard">
                 <content>
-                    <!-- <fx:include source="dashboard.fxml" fx:id="dashboard" /> -->
+                    <fx:include fx:id="dashboard" source="dashboard.fxml" />
                 </content>
             </Tab>
             <Tab text="Accounts">
                 <content>
-                    <!-- <fx:include source="accounts.fxml" fx:id="accounts" /> -->
+                    <fx:include fx:id="accounts" source="accounts.fxml" />
                 </content>
             </Tab>
             <Tab text="Transactions">
                 <content>
-                    <!-- <fx:include source="transactions.fxml" fx:id="transactions" /> -->
+                    <fx:include fx:id="transactions" source="transactions.fxml" />
                 </content>
             </Tab>
             <Tab text="Reports">
                 <content>
-                    <!-- <fx:include source="reports.fxml" fx:id="reports" /> -->
+                    <fx:include fx:id="reports" source="reports.fxml" />
                 </content>
             </Tab>
         </tabs>

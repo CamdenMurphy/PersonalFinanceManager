@@ -32,5 +32,13 @@ public abstract class Account {
         transactions.add(transaction);
     }
 
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public String toString() {
+        return name;
+    }
+
     public abstract void applyTransaction(Transaction transaction);
 }

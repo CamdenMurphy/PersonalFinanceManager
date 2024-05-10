@@ -42,5 +42,9 @@ public abstract class Account {
         return name;
     }
 
+    public String formatAccountString() {
+        return String.format("%s - $%.2f", this.getName(), this.getBalance());
+    }
+
     public abstract void applyTransaction(Transaction transaction);
 }

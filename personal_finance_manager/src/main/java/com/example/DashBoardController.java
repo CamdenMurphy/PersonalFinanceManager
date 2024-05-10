@@ -31,12 +31,8 @@ public class DashboardController {
         overviewListView.getItems().clear();
         
         for ( Account account : accounts ) {
-            String accountEntry = formatAccountEntry(account);
+            String accountEntry = account.formatAccountString();
             overviewListView.getItems().add(accountEntry);
         }
-    }
-
-    private String formatAccountEntry(Account account) {
-        return String.format("%s - $%.2f", account.getName(), account.getBalance());
     }
 }

@@ -39,9 +39,10 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" + 
-                "date=" + date + 
-                ", description=" + description + 
-                ", amount=$" + amount +'}';
+        if (amount >= 0.00) {
+            return date + " " + description + " +$" + amount;
+        } else {
+            return date + " " + description + " -$" + Math.abs(amount);
+        }
     }
 }

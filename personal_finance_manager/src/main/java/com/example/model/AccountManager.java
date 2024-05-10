@@ -1,10 +1,12 @@
 package com.example.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AccountManager {
     private static AccountManager instance;
     private ArrayList<Account> accounts;
+    private List<AccountListener> listeners = new ArrayList<>();
 
     private AccountManager() {
         accounts = new ArrayList<Account>();
@@ -29,5 +31,15 @@ public class AccountManager {
 
     public void addAccount(Account account) {
         accounts.add(account);
+    }
+
+    public void addAccountListener(AccountListener listener) {
+        listeners.add(listener);
+    }
+
+    public void notifyAccountUpdated() {
+        for (AccountListener listener : listeners) {
+            listener.onAccountUpdated();
+        }
     }
 }

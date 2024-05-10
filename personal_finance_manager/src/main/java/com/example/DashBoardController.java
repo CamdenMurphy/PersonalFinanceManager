@@ -18,12 +18,18 @@ public class DashboardController {
 
     @FXML
     private void initialize() {
+        // Register DashboardController as a listener
+        AccountManager.getInstance().addAccountListener(() -> displayOverview());
+        
         accounts = AccountManager.getInstance().getAccounts();
         displayOverview();
     }
 
     @FXML
     private void displayOverview() {
+        // Clear listview before updating it
+        overviewListView.getItems().clear();
+        
         for ( Account account : accounts ) {
             String accountEntry = formatAccountEntry(account);
             overviewListView.getItems().add(accountEntry);

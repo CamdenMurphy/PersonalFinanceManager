@@ -10,6 +10,7 @@ public abstract class Account {
     public Account(String name, Double balance) {
         this.name = name;
         this.balance = balance;
+        this.transactions = new ArrayList<>();
     }
 
     public String getName() {
@@ -30,6 +31,7 @@ public abstract class Account {
 
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
+        applyTransaction(transaction);
     }
 
     public ArrayList<Transaction> getTransactions() {

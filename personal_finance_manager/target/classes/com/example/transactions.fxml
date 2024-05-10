@@ -52,7 +52,7 @@
                   </Label>
                   <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <content>
-                        <ListView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="269.0" prefWidth="229.0" />
+                        <ListView fx:id="transactionListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="269.0" prefWidth="229.0" />
                      </content>
                   </ScrollPane>
                </children>

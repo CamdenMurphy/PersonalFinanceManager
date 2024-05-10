@@ -23,9 +23,11 @@ public class TransactionController {
     @FXML
     private ComboBox<Account> accountComboBox;
 
+    private ArrayList<Account> accounts;
+
     @FXML
     private void initialize() {
-        List<Account> accounts = AccountManager.getInstance().getAccounts();
+        accounts = AccountManager.getInstance().getAccounts();
         accountComboBox.getItems().addAll(accounts);
     }
 

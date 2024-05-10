@@ -1,6 +1,7 @@
 package com.example;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.model.Account;
@@ -10,9 +11,11 @@ import javafx.fxml.FXML;
 
 public class ReportController {
 
+    private ArrayList<Account> accounts;
+
     @FXML
     private void initialize() {
-        List<Account> accounts = AccountManager.getInstance().getAccounts();
+        accounts = AccountManager.getInstance().getAccounts();
     }
 
     @FXML

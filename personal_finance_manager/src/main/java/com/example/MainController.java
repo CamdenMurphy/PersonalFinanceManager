@@ -1,6 +1,7 @@
 package com.example;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.model.Account;
@@ -15,8 +16,10 @@ public class MainController {
     @FXML private TransactionController transactionController;
     @FXML private ReportController reportController;
 
+    private ArrayList<Account> accounts;
+
     @FXML
     public void initializeUI() throws IOException {
-        List<Account> accounts = AccountManager.getInstance().getAccounts();
+        accounts = AccountManager.getInstance().getAccounts();
     }
 }

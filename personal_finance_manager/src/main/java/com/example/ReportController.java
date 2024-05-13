@@ -2,37 +2,37 @@ package com.example;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import com.example.model.Account;
 import com.example.model.AccountManager;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 
 public class ReportController {
 
     @FXML
-    private ComboBox<Account> accountComboBox;
+    private ListView<String> reportListView;
 
     private ArrayList<Account> accounts;
 
     @FXML
     private void initialize() {
-        //AccountManager.getInstance().addAccountListener(() -> updateAccounts());
         accounts = AccountManager.getInstance().getAccounts();
 
     }
 
-    private void updateAccounts() {
-        // accounts = AccountManager.getInstance().getAccounts();
-        // accountComboBox.getItems().addAll(accounts);
+    @FXML
+    private void generateReport() {
+        reportListView.getItems().clear();  // Clear existing items
+        ArrayList<Account> accounts = AccountManager.getInstance().getAccounts();
+
+        for (Account account : accounts) {
+            String reportLine = account.getReport();
+            reportListView.getItems().add(reportLine);
+        }
     }
 
-    @FXML
-    private void generateReport() throws IOException {
-        
-    }
 
     @FXML
     private void exportReport() throws IOException {

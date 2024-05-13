@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
@@ -15,7 +14,7 @@
 
 <AnchorPane prefHeight="303.0" prefWidth="465.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ReportController">
    <children>
-      <GridPane layoutX="136.0" layoutY="110.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane layoutX="136.0" layoutY="110.0" prefHeight="358.0" prefWidth="508.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -24,34 +23,14 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label text="Select Account">
-                     <VBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <ComboBox prefWidth="150.0">
-                     <VBox.margin>
-                        <Insets left="5.0" />
-                     </VBox.margin>
-                  </ComboBox>
-                  <Label text="Select Report Type">
-                     <VBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <ComboBox prefWidth="150.0">
-                     <VBox.margin>
-                        <Insets left="5.0" />
-                     </VBox.margin>
-                  </ComboBox>
-                  <Button mnemonicParsing="false" text="Generate Report">
+                  <Button mnemonicParsing="false" onAction="#generateReport" text="Generate Report">
                      <VBox.margin>
                         <Insets left="5.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Export Report">
+                  <Button mnemonicParsing="false" onAction="#exportReport" text="Export Report">
                      <VBox.margin>
                         <Insets left="5.0" top="10.0" />
                      </VBox.margin>
@@ -60,14 +39,17 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="218.0" text="Report" underline="true">
+                  <Label contentDisplay="CENTER" prefHeight="25.0" prefWidth="218.0" text="Report" underline="true">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
                   </Label>
-                  <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                  <ScrollPane prefHeight="200.0" prefWidth="282.0" VBox.vgrow="ALWAYS">
                      <content>
-                        <ListView prefHeight="303.0" prefWidth="218.0" />
+                        <ListView fx:id="reportListView" prefHeight="254.0" prefWidth="285.0" />
                      </content>
                   </ScrollPane>
                </children>

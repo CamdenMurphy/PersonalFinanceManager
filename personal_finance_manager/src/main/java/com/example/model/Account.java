@@ -49,4 +49,7 @@ public abstract class Account {
     public abstract String getType();
     
     public abstract void applyTransaction(Transaction transaction);
+
+    public abstract String getReport();
+
 }

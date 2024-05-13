@@ -28,7 +28,7 @@
                <children>
                   <Label text="Select Account">
                      <VBox.margin>
-                        <Insets left="5.0" top="5.0" />
+                        <Insets left="5.0" top="10.0" />
                      </VBox.margin>
                   </Label>
                   <ComboBox fx:id="accountComboBox" prefWidth="150.0">
@@ -49,6 +49,9 @@
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
                   </Label>
                   <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <content>

@@ -1,5 +1,7 @@
 package com.example.model;
 
+import java.time.LocalDate;
+
 public class SavingsAccount extends Account {
     
     private Double interestRate;
@@ -13,11 +15,53 @@ public class SavingsAccount extends Account {
         return "Savings Account";
     }
 
+    public void applyMonthlyInterest() {
+        double monthlyInterest = getBalance() * (interestRate / 100) / 12;
+        Transaction interestTransaction = new Transaction(LocalDate.now(), "Monthly Interest", monthlyInterest);
+        addTransaction(interestTransaction);
+        setBalance(getBalance() + monthlyInterest);
+    }
+
+    public Double getMonthlyInterest() {
+        double monthlyInterest = getBalance() * (interestRate / 100) / 12;
+        return monthlyInterest;
+    }
+
+    @Override
+    public String getReport() {
+        applyMonthlyInterest();
+        StringBuilder report = new StringBuilder();
+        report.append("Account Name: ").append(getName()).append("\n");
+        report.append("Type: Checking\n");
+        report.append("Balance: $").append(String.format("%.2f", getBalance())).append("\n");
+        report.append(String.format("Monthly Interest Earned: $%.2f\n", getMonthlyInterest()));
+
+        // Summarize transactions as debits and credits
+        report.append("Transactions:\n");
+        report.append("Debits (Withdrawals):\n");
+        for (Transaction t : getTransactions()) {
+            if (t.getAmount() < 0) {
+                report.append(String.format("  %s: $%.2f\n", t.getDescription(), t.getAmount()));
+            }
+        }
+
+        report.append("Credits (Deposits):\n");
+        for (Transaction t : getTransactions()) {
+            if (t.getAmount() > 0) {
+                report.append(String.format("  %s: $%.2f\n", t.getDescription(), t.getAmount()));
+            }
+        }
+
+        return report.toString();
+    }
+
     @Override
     public void applyTransaction(Transaction transaction) {
         Double amount = transaction.getAmount();
-        // Take interest into account
-        setBalance(getBalance() + amount + (amount * interestRate / 100));
+        // Take interest into account per transaction
+        // setBalance(getBalance() + amount + (amount * interestRate / 100));
+        setBalance(getBalance() + amount);
+
     }
 
     public Double getInterestRate() {

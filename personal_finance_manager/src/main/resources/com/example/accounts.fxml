@@ -2,8 +2,11 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -11,9 +14,9 @@
 
 <!-- It's important to include these namespace declarations -->
 
-<AnchorPane prefHeight="323.0" prefWidth="467.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AccountController">
+<AnchorPane prefHeight="353.0" prefWidth="694.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AccountController">
    <children>
-      <HBox alignment="TOP_CENTER" layoutX="134.0" layoutY="112.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="TOP_CENTER" layoutX="134.0" layoutY="112.0" prefHeight="336.0" prefWidth="630.0" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="323.0" prefWidth="175.0">
                <children>
@@ -23,7 +26,6 @@
                      </font>
                   </Label>
                   <ListView fx:id="accountsListView" prefHeight="200.0" prefWidth="200.0" />
-                  <Button mnemonicParsing="false" onAction="#handleAddAccount" text="Add New Account" />
                </children>
                <HBox.margin>
                   <Insets right="5.0" />
@@ -38,8 +40,40 @@
                   </Label>
                   <ListView fx:id="detailsListView" prefHeight="200.0" prefWidth="196.0">
                      <VBox.margin>
-                        <Insets left="5.0" />
+                        <Insets left="5.0" right="5.0" />
                      </VBox.margin></ListView>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="360.0" layoutY="10.0" prefHeight="323.0" prefWidth="175.0">
+               <children>
+                  <Label text="Create New Account">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="216.0">
+                           <children>
+                              <Label text="Account Type" />
+                              <ComboBox fx:id="typeComboBox" prefWidth="150.0" />
+                              <Label text="Account Name:" />
+                              <TextField fx:id="nameTextField" />
+                              <Label text="Current Balance" />
+                              <TextField fx:id="balanceTextField" />
+                              <Label text="Interest Rate (If Savings Account)" />
+                              <TextField fx:id="interestTextField" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <Button mnemonicParsing="false" onAction="#handleAddAccount" text="Add New Account">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></Button>
                </children>
             </VBox>
          </children>

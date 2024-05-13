@@ -30,11 +30,29 @@ public class TransactionController {
 
     @FXML
     private void initialize() {
+        AccountManager.getInstance().addAccountListener(() -> updateAccounts());
         accounts = AccountManager.getInstance().getAccounts();
         accountComboBox.getItems().addAll(accounts);
         accountComboBox.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
-            updateTransactionList(newValue);
+            if (newValue != null) {
+                updateTransactionList(newValue);
+            }
         });
+    }
+
+    private void updateAccounts() {
+        Account currentSelected = accountComboBox.getSelectionModel().getSelectedItem();
+        accounts = AccountManager.getInstance().getAccounts();
+        
+        accountComboBox.getItems().clear();
+        accountComboBox.getItems().addAll(accounts);
+
+        if (currentSelected != null && accounts.contains(currentSelected)) {
+            accountComboBox.getSelectionModel().select(currentSelected);
+        } else {
+            accountComboBox.getSelectionModel().clearSelection();
+            transactionListView.getItems().clear();
+        }
     }
 
     @FXML
@@ -48,14 +66,15 @@ public class TransactionController {
             alert.showAndWait();
             return;
         }
-
+        
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open CSV File");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
         File file = fileChooser.showOpenDialog(null);
-
-        if (file != null) {
+        if (file != null && selectedAccount != null) {
             uploadTransactions(file, selectedAccount);
+        } else {
+            System.out.println("file is null and/or selectedAccount is null.");
         }
     }
 
@@ -70,15 +89,14 @@ public class TransactionController {
                     LocalDate date = LocalDate.parse(data[0].trim(), formatter);
                     String description = data[1].trim();
                     double amount = Double.parseDouble(data[2].trim());
-                    // System.out.println(date);
-                    // System.out.println(description);
-                    // System.out.println(amount);
+                    
                     Transaction transaction = new Transaction(date, description, amount);
                     account.addTransaction(transaction);
-                    AccountManager.getInstance().notifyAccountUpdated();
                 }
             }
             updateTransactionList(account);
+            AccountManager.getInstance().notifyListeners();
+
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");

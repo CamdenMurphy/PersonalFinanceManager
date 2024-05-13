@@ -9,6 +9,10 @@ public class SavingsAccount extends Account {
         this.interestRate = interestRate;
     }
 
+    public String getType() {
+        return "Savings Account";
+    }
+
     @Override
     public void applyTransaction(Transaction transaction) {
         Double amount = transaction.getAmount();

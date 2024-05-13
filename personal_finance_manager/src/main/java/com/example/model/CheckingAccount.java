@@ -6,6 +6,10 @@ public class CheckingAccount extends Account {
         super(name, balance);
     }
 
+    public String getType() {
+        return "Checking Account";
+    }
+
     @Override
     public void applyTransaction(Transaction transaction) {
         setBalance(getBalance() + transaction.getAmount());

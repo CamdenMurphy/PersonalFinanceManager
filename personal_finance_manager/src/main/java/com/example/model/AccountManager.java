@@ -12,9 +12,9 @@ public class AccountManager {
         accounts = new ArrayList<Account>();
 
         // Initial Accounts
-        Account checking = new CheckingAccount("Checking", 0.00);
+        Account checking = new CheckingAccount("My Checking", 0.00);
         accounts.add(checking);
-        Account savings = new SavingsAccount("Savings", 0.00, 0.58);
+        Account savings = new SavingsAccount("My Savings", 0.00, 0.58);
         accounts.add(savings);
     }
 
@@ -31,13 +31,14 @@ public class AccountManager {
 
     public void addAccount(Account account) {
         accounts.add(account);
+        notifyListeners();
     }
 
     public void addAccountListener(AccountListener listener) {
         listeners.add(listener);
     }
 
-    public void notifyAccountUpdated() {
+    public void notifyListeners() {
         for (AccountListener listener : listeners) {
             listener.onAccountUpdated();
         }

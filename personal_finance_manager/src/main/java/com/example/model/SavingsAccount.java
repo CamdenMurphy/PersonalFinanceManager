@@ -16,14 +16,14 @@ public class SavingsAccount extends Account {
     }
 
     public void applyMonthlyInterest() {
-        double monthlyInterest = getBalance() * (interestRate / 100) / 12;
-        Transaction interestTransaction = new Transaction(LocalDate.now(), "Monthly Interest", monthlyInterest);
+        double monthlyInterest = getBalance() * (interestRate / 100);
+        Transaction interestTransaction = new Transaction(LocalDate.now(), "Interest Payment", monthlyInterest);
         addTransaction(interestTransaction);
         setBalance(getBalance() + monthlyInterest);
     }
 
     public Double getMonthlyInterest() {
-        double monthlyInterest = getBalance() * (interestRate / 100) / 12;
+        double monthlyInterest = getBalance() * (interestRate / 100);
         return monthlyInterest;
     }
 
@@ -34,7 +34,7 @@ public class SavingsAccount extends Account {
         report.append("Account Name: ").append(getName()).append("\n");
         report.append("Type: Checking\n");
         report.append("Balance: $").append(String.format("%.2f", getBalance())).append("\n");
-        report.append(String.format("Monthly Interest Earned: $%.2f\n", getMonthlyInterest()));
+        report.append(String.format("Interest Earned: $%.2f\n", getMonthlyInterest()));
 
         // Summarize transactions as debits and credits
         report.append("Transactions:\n");

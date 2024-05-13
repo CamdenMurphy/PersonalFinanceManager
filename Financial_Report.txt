@@ -1,0 +1,60 @@
+Account Name: My Checking
+Type: Checking
+Balance: $7172.01
+Transactions:
+Debits (Withdrawals):
+  Grocery Store: $-150.00
+  Coffee Shop: $-9.75
+  Online Subscription: $-12.99
+  Utility Bill: $-90.25
+  Rent Payment: $-1000.00
+  Utility Bill: $-165.00
+Credits (Deposits):
+  Paycheck: $4300.00
+  Paycheck: $4300.00
+
+
+
+Account Name: My Savings
+Type: Checking
+Balance: $7185.88
+Monthly Interest Earned: $3.47
+Transactions:
+Debits (Withdrawals):
+  Grocery Store: $-150.00
+  Coffee Shop: $-9.75
+  Online Subscription: $-12.99
+  Utility Bill: $-90.25
+  Rent Payment: $-1000.00
+  Utility Bill: $-165.00
+Credits (Deposits):
+  Paycheck: $4300.00
+  Paycheck: $4300.00
+  Monthly Interest: $3.47
+  Monthly Interest: $3.47
+
+Account Name: Cam
+Type: Checking
+Balance: $16261.02
+Transactions:
+Debits (Withdrawals):
+  Grocery Store: $-150.00
+  Coffee Shop: $-9.75
+  Online Subscription: $-12.99
+  Utility Bill: $-90.25
+  Rent Payment: $-1000.00
+  Utility Bill: $-165.00
+  Grocery Store: $-150.00
+  Coffee Shop: $-9.75
+  Online Subscription: $-12.99
+  Utility Bill: $-90.25
+  Rent Payment: $-1000.00
+  Utility Bill: $-165.00
+Credits (Deposits):
+  Paycheck: $4300.00
+  Paycheck: $4300.00
+  Paycheck: $4300.00
+  Paycheck: $4300.00
+
+
+

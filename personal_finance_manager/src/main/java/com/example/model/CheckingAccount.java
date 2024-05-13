@@ -37,6 +37,9 @@ public class CheckingAccount extends Account {
                 report.append(String.format("  %s: $%.2f\n", t.getDescription(), t.getAmount()));
             }
         }
+        
+        // For spacing when showing multiple reports
+        report.append("\n\n");
 
         return report.toString();
     }

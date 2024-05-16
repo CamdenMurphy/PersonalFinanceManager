@@ -16,7 +16,7 @@ public class SavingsAccount extends Account {
     }
 
     public void applyMonthlyInterest() {
-        double monthlyInterest = getBalance() * (interestRate / 100);
+        double monthlyInterest = getMonthlyInterest();
         Transaction interestTransaction = new Transaction(LocalDate.now(), "Interest Payment", monthlyInterest);
         addTransaction(interestTransaction);
         setBalance(getBalance() + monthlyInterest);
